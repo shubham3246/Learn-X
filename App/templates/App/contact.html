@@ -1,0 +1,51 @@
+{% extends 'App/layout.html' %}
+
+{% block pro %}
+    {% if is_pro == True %}
+        <div class="pro-member">Premium member</div>
+    {% endif %}
+{% endblock %}
+{% block membership-btn %}
+    {% if is_pro == False %}
+        <li>
+            <button class="membership-open-btn" onclick="open_payment_box()">Get Membership</button>
+        </li>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+<style>
+    .payment-button{
+        position: relative;
+        top: 20px;
+    }
+</style>
+<div class="contact">
+    <div class="contact-inner">
+        <div class="contact-inner-card">
+            <div class="contact-box">
+                <h2>Contact Us</h2>
+                <form action="{% url 'contact' %}" method="post" id="contact-form">
+                    {% csrf_token %}
+                    <div id="csrf_token" style="display: none;">{{csrf_token}}</div>
+                    <div class="user-box">
+                        <input type="text" name="name" required="" id="contact-name"/>
+                        <label>Name</label>
+                    </div>
+                    <div class="user-box" style="margin-bottom: 65px;">
+                        <input type="text" name="email" required="" id="contact-email"/>
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box" style="border-bottom: none;">
+                        <label class="feedback-label-child" id="feedback-label" style="left:2px; transition: 1.5s;">Feedback</label>
+                        <textarea type="text" name="feedback" required="" id="contact-feedback"></textarea>
+                    </div>
+                    {% block quote %}
+                    {% include 'App/sendbtn.html' %}
+                    {% endblock %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

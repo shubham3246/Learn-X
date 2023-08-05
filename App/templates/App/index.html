@@ -1,0 +1,136 @@
+{% extends 'App/layout.html' %}
+{% load static %}
+
+{% block pro %}
+    {% if is_pro == True %}
+        <div class="pro-member">Premium member</div>
+    {% endif %}
+{% endblock %}
+{% block membership-btn %}
+    {% if is_pro == False %}
+        <li>
+            <button class="membership-open-btn" onclick="open_payment_box()">Get Membership</button>
+        </li>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="index-main">
+    <header class="inner-main-header">
+        <div class="inner-main-header-container">
+            <canvas id="c"></canvas>
+        </div>
+    </header>
+
+    <div class="inner-main-body">
+        <div class="inner-main-body-featured-courses">
+            <div class="container text-center my-3"> 
+                <h2 class="font-weight-light">Featured Courses</h2> 
+                <div class="row mx-auto my-auto justify-content-center"> 
+                    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel"> 
+                        <div class="carousel-inner" role="listbox"> 
+                            <div class="carousel-item active"> 
+                                <div class="col-md-3"> 
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="{{context.first.imageUrl}}" class="card-img-top" alt="..." style="max-height: 150px; object-fit: cover;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{context.first.title | truncatechars:20}}</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div> 
+                            {% for course in context %}
+                            {% if not forloop.first %}
+                            <div class="carousel-item"> 
+                                <div class="col-md-3"> 
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="{{course.imageUrl}}" class="card-img-top" alt="..." style="max-height: 150px; object-fit: cover;">
+                                        <div class="card-body">
+                                            {% if not course.is_free %}
+                                            <span class="position-absolute translate-middle badge rounded-pill">Premium</span>
+                                            {% endif %}
+                                            <h5 class="card-title">{{course.title | truncatechars:20}}</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <a href="{% url 'course' course.slug %}" class="btn btn-primary">View Course</a>
+                                        </div>
+                                    </div>                                   
+                                </div> 
+                            </div> 
+                            {% endif %}
+                            {% endfor %}
+                            
+                            
+                        </div> 
+        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> </a> <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> </a> </div> </div></div>
+        
+        <div class="inner-main-body-become-pro">
+                
+                <div class="membership-card-outer">
+                    <div class="membership-card-inner">
+                        <div class="membership-card">
+                            <div class="membership-card-left">
+                            
+                                <div class="left_1">{% include 'App/Card.svg' %}</div>
+                                <div class="hex">
+                                    <div style="position: absolute;">
+                                        <!-- hex -->
+                                        <div class="hex_1"></div>
+                                        <!-- shadow for hex  -->
+                                        {% include 'App/hexagon.svg' %} 
+                                        <div class="hex_1_X">
+                                            <div class="hex_1_left_outer" style="z-index: 18;"></div>
+                                            <div class="hex_1_left_inner" style="z-index: 20;"></div>
+                                            <div class="hex_1_right_outer" style="z-index: 13;"></div>
+                                            <div class="hex_1_right_inner" style="z-index: 15;"></div>
+                                        </div>
+                                        <div class="hex_1_Learn">Learn</div>
+                                    </div>                           
+                                    <div style="position: absolute;z-index: 10;left: 14px;">
+                                        <div class="hex_1 hex_2"></div>
+                                        {% include 'App/hexagon.svg' %} 
+                                    </div>                           
+                                </div>
+
+                                <!-- <div> filter for both hex </div> -->
+                                <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                    <defs>
+                                        <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />    
+                                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                                        </filter>
+                                    </defs>
+                                </svg>
+                                <!-- <div></div> -->
+                                
+                            </div>
+                            
+                            <div class="membership-card-right">
+                                <div>Join our members and open the doors to knowledge.</div>
+                                <div>Get access to all our premium courses now.</div>
+                                <button onclick="open_payment_box()">Get Membership</button>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    {% if is_pro %}
+    <script>
+        document.querySelector(".membership-card-outer").style.display = "none";
+    </script>
+    {% else %}
+    <script>
+        document.querySelector(".membership-card-outer").style.display = "block";
+    </script>
+    {% endif %}
+
+    
+</div>
+{% endblock %}

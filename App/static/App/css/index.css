@@ -1,0 +1,200 @@
+.index-main{
+    position: relative;
+    margin: 20px;
+}
+.inner-main-header-container{
+    background:none;overflow:hidden; padding: 30px 0; box-sizing: border-box;
+}
+
+/*corosal*/
+@media (max-width: 767px){.carousel-inner .carousel-item >div{display: none}.carousel-inner .carousel-item >div:first-child{display: block}}.carousel-inner .carousel-item.active, .carousel-inner .carousel-item-next, .carousel-inner .carousel-item-prev{display: flex}@media (min-width: 768px){.carousel-inner .carousel-item-end.active, .carousel-inner .carousel-item-next{transform: translateX(25%)}.carousel-inner .carousel-item-start.active, .carousel-inner .carousel-item-prev{transform: translateX(-25%)}}.carousel-inner .carousel-item-end, .carousel-inner .carousel-item-start{transform: translateX(0)}
+
+.carousel-control-prev span,
+.carousel-control-next span{
+  box-shadow: 0px 0px 13px 8px #03e9f4;
+}
+
+.inner-main-body-featured-courses{
+    margin: 200px 0 0 0;
+}
+.font-weight-light{
+    font-family: 'Laila', sans-serif;
+    color: #03e9f4;
+    margin: 50px 0;
+}
+.carousel{
+    padding: 7px 7px;
+}
+.carousel-inner{
+    overflow: unset;
+    overflow-x: clip;
+}
+.card{
+    background: none;
+    color: white;
+    border: 2px solid #ff0513;
+}
+.card:hover{
+    box-shadow: 1px 0px 20px 5px #ff0513;
+}
+.card a{
+    background-color: #ff0513;
+    border: none;
+    outline: none;
+}
+.card a:hover{
+    background-color: #ff0513;
+    box-shadow: 1px 0px 20px 5px #ff0513;
+}
+
+/*membership*/
+.inner-main-body-become-pro{
+    margin: 150px 0 0 0;
+    box-sizing: border-box;
+    padding: 100px;
+}
+
+.membership-card-outer{
+    left: 300px;
+    top: 300px;
+  }
+  .membership-card-inner{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .membership-card{
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #03131d, #033745);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  .membership-card-left{
+    position: absolute;
+    width: 35%;
+    left: 0;
+    height: 100%;
+    display: grid;
+  }
+  .left_1 svg {
+    top: -63px;
+    position: relative;
+    height: 539px;
+  }
+  .hex{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    left: 138px;
+    align-items: center;
+  }
+  .hex svg{
+    position: absolute;
+    height: 99%;
+    top: -1px;
+    left: -6px;
+  }
+  .hex:first-child svg{
+    width: 106%;
+  }
+  .hex:nth-child(2) svg{
+    width: 104%;
+    left: -4px;
+  }
+  .hex_1 {
+    width: 200px;
+    display: inline-block;
+    margin:0 5px;
+    color:rgb(41, 92, 111);
+    filter: url('#goo');
+    position: relative;
+    z-index: 5;
+  }
+
+  .hex_1::before {
+    content: "";
+    display: block;
+    background:currentColor;
+    padding-top: 115%; 
+    clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0%);
+  }
+
+  .hex_2{
+    width: 172px;
+    color:#04252e;
+  }
+
+  .hex_1_X, .hex_1_Learn{
+    position: absolute;
+  }
+  .hex_1_Learn{
+    top: 96px;
+    z-index: 30;
+    left: 62px;
+    font-family: 'Laila', sans-serif;
+    font-size: 30px;
+    color: #d0bb80;
+    background: linear-gradient(45deg, #000907, #005344);
+    border: 2px solid wheat;
+    border-radius: 20px;
+    padding: 6px;
+    line-height: 26px;
+  }
+  .hex_1_X div{
+    height: 145px;
+    width: 58px;
+    background: rgb(57 108 126);
+    position: absolute;
+  }
+  .hex_1_left_inner,
+  .hex_1_left_outer,
+  .hex_1_right_inner,
+  .hex_1_right_outer{
+    top: -192px;
+    left: 80px;
+    rotate: -45deg;
+    border-radius: 26px;
+    box-shadow: inset 0px 0px 20px 7px #cfaa6a;
+  }
+   .hex_1_left_outer,
+  .hex_1_right_outer{
+    box-shadow: 0 0 18px 2px #cfaa6a;
+  }
+  .hex_1_right_inner,
+  .hex_1_right_outer{
+    rotate: 45deg;
+  }
+
+  .membership-card-right{
+    position: relative;
+    left: 148px;
+    width: 279px;
+    box-sizing: border-box;
+    padding: 0 0 0 44px;
+    color: wheat;
+    font-size: 22px;
+    
+    background: linear-gradient(to right, #dcc39a, #a1774d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-left: 2px solid #dab674;
+  }
+
+  .membership-card-right div:nth-child(2){
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  .membership-card-right button{
+    background: none;
+    outline: none;
+    margin: 0 0 9px 0;
+    border-radius: 9px;
+    border: 2px solid #b8a37a;
+  }

@@ -1,0 +1,16 @@
+.courses{
+    margin: 0px 0 150px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.courses-inner{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 100px;
+}
+
+.card-body-para{
+    font-size: 13px;
+    margin: 10px 0;
+}

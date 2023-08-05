@@ -1,0 +1,125 @@
+.course-inner{
+    margin: 150px 0 180px 0;
+    box-sizing: border-box;
+    padding: 0 90px;
+    color: white;
+}
+.course-inner img{
+    height: 240px; 
+    width: 500px; 
+    object-fit: cover;
+    object-position: center ;
+}
+.course-inner-card-top{
+    margin: 30px 0 0 50px;
+    font-family:sans-serif;
+    font-size: 25px;
+    line-height: 35px;
+}
+.course-inner-card-text{
+    margin: 30px 0 0 0;
+}
+.course-inner-card-body{
+    margin: 80px 0 0 0;
+}
+.course-inner-card-body-para{
+    margin: 0 0 30px 0;
+    color: #ff0513;
+}
+.course-inner-card-body-description h3{
+    color: #03e9f4;
+    margin: 0 0 35px 0;
+}
+.course-inner-card-body-subscription{
+    position: relative;
+    cursor: pointer;
+    margin: 50px 0 100px 0;
+}
+/*/////////////////////////////////////////////*/
+.course-inner-lectures-card-before{
+    margin: 20px;
+    transition: 3s;
+}
+
+.course-inner-lectures-card-detail-before{
+    display: flex;
+    height: 100%;
+}
+
+.course-inner-lectures-card-detail-left-before{
+    border-right: 2px solid red;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.course-inner-lectures-card-detail-left-before div
+{
+    font-size: 20px;
+    width: 100px;
+    margin: 40px 90px;
+}
+.course-inner-lectures-card-detail-right-before {
+    width: 100%;
+    padding: 40px 90px 40px 50px;
+}
+.course-inner-lectures-card-detail-right-button-before {
+    background: none;
+    outline: none;
+    color: #03e9f4;
+    border: 2px solid #03e9f4;
+    padding: 2px 5px;
+    border-radius: 20px;
+}
+.course-inner-lectures-link-before{
+    height: 0px;
+    overflow: hidden;
+}
+
+/* after*/
+.course-inner-lectures-card-after{
+    height: fit-content;
+    margin: 20px;
+    transition: 3s;
+} 
+.course-inner-lectures-card-detail-after{
+    display: flex;
+}
+.course-inner-lectures-card-detail-left-after{
+   
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #ff0513;
+}
+.course-inner-lectures-card-detail-left-after div{
+    font-size: 20px;
+    width: 100px;
+    margin: 40px 90px;
+}
+.course-inner-lectures-card-detail-right-after{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.course-inner-lectures-card-detail-right-title-after{
+    margin: 8px 0 8px 30px;
+    color: #03e9f4;
+}
+/* .course-inner-lectures-card-right-button-after{
+
+} */
+.course-inner-lectures-card-detail-right-button-after {
+    background: none;
+    outline: none;
+    color: #03e9f4;
+    border: 2px solid #03e9f4;
+    padding: 1px 9px;
+    border-radius: 20px;
+}
+.course-inner-lectures-link-after{
+    height: 100%;
+    transition: 3s;
+}

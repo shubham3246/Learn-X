@@ -1,0 +1,83 @@
+{% extends 'App/layout.html' %}
+
+{% block pro %}
+    {% if is_pro == True %}
+        <div class="pro-member">Premium member</div>
+    {% endif %}
+{% endblock %}
+{% block membership-btn %}
+    {% if is_pro == False %}
+        <li>
+            <button class="membership-open-btn" onclick="open_payment_box()">Get Membership</button>
+        </li>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="course">
+    <div class="course-inner">
+        <div class="d-flex gap-5">
+            <img src="{{course.imageUrl}}" alt="...">
+            <div class="course-inner-card-top">
+                {% csrf_token %}
+                <h3 class="course-inner-card-slug" style="display: none;">{{course.slug}}</h3>
+                <h3 class="course-inner-card-csrf" style="display: none;">{{csrf_token}}</h3>
+                <h3 class="course-inner-card-title ">{{course.title | truncatechars:20}}</h3>
+                <p class="course-inner-card-text h6 rating">Rating: {{course.rating.count}}</p>
+                <p class="request_user" style="display: none;">{{request.user}}</p>
+
+                <i class="fa fa-thumbs-up like" onclick="likeCourse()"></i>
+                <i class="fa fa-thumbs-down dislike" onclick="dislikeCourse()" style="transform: scaleX(-1);"></i>
+            </div>
+        </div>
+        <div class="course-inner-card-body">
+            {% if is_free == false and is_sub == false %} 
+            <div class="pro-card h-5 w-5" style="color: goldenrod;"></div>
+            {% endif %}
+            <div class="course-inner-card-body-para d-flex gap-5">
+                <p class="course-inner-card-text">{{course.hours}} Hours</p>
+                <p class="course-inner-card-text">{{course.lectures}} Lectures</p>
+            </div>
+            <div class="course-inner-card-body-description">
+                <h3>Description:</h3>
+                <p class="card-text">{{course.description|safe}}</p>
+            </div>
+            <!-- <form ></form> -->
+            <div class="course-inner-card-body-subscription">
+                {% if is_sub %}
+                <div style="color: #03e9f4;">Subscribed to the current course.</div>
+                {% else %}
+                <a>Subscribe to the course</a>
+                {% endif %}
+            </div>
+        </div>
+        {% if is_sub %}
+        <div class="is_sub"></div>
+        {% endif %}
+        <div class="course-inner-lectures" style="display: none;">
+            <div class="course-inner-lectures-card-outer">
+                {% for title, lectures in lecture_data %}
+                <div class="card course-inner-lectures-card-{{forloop.counter}} course-inner-lectures-card-before" data-counter="{{forloop.counter}}">
+                    <div class="course-inner-lectures-card-detail-{{forloop.counter}} course-inner-lectures-card-detail-before">
+                        <div class="course-inner-lectures-card-detail-left-{{forloop.counter}} course-inner-lectures-card-detail-left-before"><div>Lecture {{forloop.counter}}</div></div>
+                        <div class="course-inner-lectures-card-detail-right-{{forloop.counter}} course-inner-lectures-card-detail-right-before">
+                            <div class="d-flex justify-content-between" style="width: 100%;">
+                                <div class="course-inner-lectures-card-detail-right-title-{{forloop.counter}} course-inner-lectures-card-detail-right-title-before">{{title}}</div>
+                                <button class="course-inner-lectures-card-detail-right-button-{{forloop.counter}} course-inner-lectures-card-detail-right-button-before" onclick="showLecture('{{forloop.counter}}')" id="course-lecture-button-{{forloop.counter}}">View lecture</button>
+                            </div>
+                            <div class="course-inner-lectures-link-{{forloop.counter}} course-inner-lectures-link-before">
+                                <iframe width="560" height="315" src="{{lectures}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>  
+</div>
+<script>
+    const maxLike = parseInt(document.querySelector(".rating").innerText.slice(8))+1;
+    const minLike = parseInt(document.querySelector(".rating").innerText.slice(8))-1;
+</script>
+{% endblock %}

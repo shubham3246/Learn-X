@@ -1,0 +1,123 @@
+.contain-search {
+    position: relative;
+    width: 400px;
+    margin: 80px 0 0 0;
+}
+
+.contain-search .searching {
+  
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: rgb(57, 181, 215);
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+  } 
+
+  .contain-search .searching:hover {
+    cursor: pointer;
+  }
+  /*left hand of X*/
+  .contain-search .searching::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 17px;
+    right: 0;
+    bottom: 0;
+    left: 17px;
+    width: 10px;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+  }
+  /* circle of search icon*/
+  .contain-search .searching::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 20px;
+    height: 20px;
+    
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.5s;
+  }
+  /* bar */
+ 
+  
+  .contain-search input {
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background: #0ae2eac7;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #0ae2eac7;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 #0ae2eac7, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+  }
+  .contain-search input:hover {
+    cursor: pointer;
+  }
+  .contain-search input:focus {
+    width: 300px;
+    opacity: 1;
+    
+    cursor: text;
+  }
+  /*circle after click*/
+  .contain-search input:focus ~ .searching {
+    right: -260px;
+    height: 37px;
+    width: 37px;
+    
+    background: rgba(34, 151, 183, 0.879);
+    z-index: 6;
+  }
+  /*left hand of X*/
+  .contain-search input:focus ~ .searching::before {
+    top: 0;
+    left: 0;
+    width: 25px;
+  }
+  /* right hand of X*/
+  .contain-search input:focus ~ .searching::after {
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    border: none;
+    background: white;
+    border-radius: 0%;
+    transform: rotate(-45deg);
+  }
+  .contain-search input::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-weight: bolder;
+  }

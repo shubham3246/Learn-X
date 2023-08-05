@@ -1,0 +1,116 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+.content{
+    background: linear-gradient(black 0%, #141e30 45%, #243b55 93%, #335768 100%);
+}
+
+a{
+    text-decoration: none;
+    color: #03e9f4;
+    border: 2px solid #243b55;
+    box-sizing: border-box;
+    padding: 10px;
+
+    transition: 0.4s;
+}
+a:hover {
+    box-shadow: 0px 0px 20px 2px #03e9f4;
+    text-shadow: 1px 0px 16px blue;
+    background-color: #03e9f4;
+    color: white;
+}
+.index-navbar{
+    position: relative;
+    box-sizing: border-box;
+    padding: 40px;
+    border-bottom: #03e9f4;
+    box-shadow: 0px 0px 20px 2px #03e9f4;
+}
+.index-navbar-innerbox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.pro-member{
+    color: Wheat;
+    border: 2px solid wheat;
+    border-radius: 9px;
+    box-sizing: border-box;
+    padding: 2px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.index-navbar-innerbox ul{
+    position: relative;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+.index-navbar-innerbox li{
+    margin: 0 10px; 
+}
+
+
+.membership-open-btn{
+    all:unset;
+    color: wheat;
+    border: 2px solid wheat;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+    
+}
+.membership-open-btn:hover{
+    background: #eec374;
+    /* border: transparent; */
+    color: #141e30;
+}
+/* payment */
+.payment-box{
+    display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+/*footer*/
+.inner-main-footer{
+    position: relative;
+    color: #03e9f4;
+    box-sizing: border-box;
+    box-shadow: 1px 0px 50px 3px #03e9f4;
+    padding: 83px 100px 95px 100px;
+}
+.inner-main-footer-box{
+    justify-content: space-around;
+}
+.inner-main-footer-box li{
+    margin: 10px;
+    cursor: pointer;
+    list-style-type: none;
+}
+.inner-main-footer-box li a{
+    border: none;
+    outline: none;
+    
+}
+.inner-main-footer-box li a:hover{
+    background: none;
+    box-shadow: none;
+    text-shadow: -2px 1px 20px #00edff;
+}
+
+.badge{
+    rotate: 37deg;
+    left: 90%;
+    top: 10%;
+    background-color: rgb(242, 204, 135);
+    color: #243b55;
+}

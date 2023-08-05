@@ -1,0 +1,46 @@
+{% extends 'App/layout.html' %}
+
+{% block pro %}
+    {% if is_pro == True %}
+        <div class="pro-member">Premium member</div>
+    {% endif %}
+{% endblock %}
+{% block membership-btn %}
+    {% if is_pro == False %}
+        <li>
+            <button class="membership-open-btn" onclick="open_payment_box()">Get Membership</button>
+        </li>
+    {% endif %}
+{% endblock %}
+
+
+
+{% block body %}
+<div class="about">
+    <div class="about-inner">
+        <div class="about-inner-card d-flex">
+            <div class="about-inner-card-left">
+                <h2 class="about-inner-card-title">Who we are?</h2>
+                <div class="about-inner-card-text">{{context.about|safe}}</div>
+            </div>
+            <div class="about-inner-card-right">
+                <img src="https://codeclan.com/wp-content/uploads/elementor/thumbs/undraw_code_review_l1q9-pbg5xj9uj7b9auihqhld1b7m5pm688z9sx5o5m14du.png" alt="">
+            </div>
+        </div>
+        <div class="about-inner-banner">
+            <div class="about-inner-banner-container">
+                <div>
+                    <span>{{context.learners}} K Learners</span>
+                    <span>{{context.languages}} Languages</span>
+                </div>
+                
+                <span>{{context.instructors}} K Instructors</span>
+                <div>
+                    <span>{{context.courses}} Courses</span>
+                    <span>{{context.enrollments}} K Enrollments</span>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

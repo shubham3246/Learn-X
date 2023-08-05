@@ -1,0 +1,48 @@
+{% extends "App/layout.html" %}
+
+{% block pro %}
+    {% if is_pro == True %}
+        <div class="pro-member">Premium member</div>
+    {% endif %}
+{% endblock %}
+{% block membership-btn %}
+    {% if is_pro == False %}
+        <li>
+            <button class="membership-open-btn" onclick="open_payment_box()">Get Membership</button>
+        </li>
+    {% endif %}
+{% endblock %}
+    
+
+
+{% block body %}
+    <div class="courses">
+        <form id="search-form" onsubmit="search_form(event)">
+            {% csrf_token %}
+            <div class="contain-search">
+                <input id="search-course" onkeypress="searchKeyPress(event)" type="text" placeholder="Search...">
+                <div class="searching"></div>
+            </div>
+        </form>
+        
+
+        <div class="courses-inner d-flex flex-wrap justify-content-center gap-5">
+            {% for course in context %}
+                <div class="card" id="{{course.id}}"  style="width: 18rem;">
+                    <img src="{{course.imageUrl}}" class="card-img-top" alt="..." style="max-height: 150px; object-fit: cover;">
+                    <div class="card-body">
+                        {% if not course.is_free %}
+                        <span class="position-absolute translate-middle badge rounded-pill">Premium</span>
+                        {% endif %}
+                        <h5 class="card-title">{{course.title | truncatechars:20}}</h5>
+                        <div class="card-body-para d-flex justify-content-between">
+                            <p class="card-text">Rating {{course.rating.count}}</p>
+                            <p class="card-text">{{course.hours}} Hours</p>
+                        </div>
+                        <a href="{% url 'course' course.slug %}" class="btn btn-primary">View Course</a>
+                    </div>
+                </div>                                   
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

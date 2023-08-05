@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'App/images/LearnXicon.png' %}">
+    <title>Learn X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="{% static 'App/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'App/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'App/css/courses.css' %}">
+    <link rel="stylesheet" href="{% static 'App/css/course.css' %}">
+    <link rel="stylesheet" href="{% static 'App/css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'App/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'App/css/search.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'App/css/login.css' %}"> -->
+    
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'App/js/index.js' %}"></script>
+    <script src="{% static 'App/js/course.js' %}"></script>
+    <script src="{% static 'App/js/courses.js' %}"></script>
+    <script src="{% static 'App/js/contact.js' %}"></script>
+    <script src="{% static 'App/js/layout.js' %}"></script>
+
+</head>
+<body>
+    <div class="content">
+    <nav class="index-navbar">
+        <div class="index-navbar-innerbox">
+            {% block pro %}
+            <!-- <div class="pro-member">Premium member</div> -->
+            {% endblock %}
+            <div></div>
+            <ul>
+                <div id="payment-message" class="hidden"></div>
+                {% block membership-btn %}
+                {% endblock %}
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'courses' %}">All courses</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}">About Us</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <div class="payment-box">{% include "App/stripe.html" %}</div>
+    
+    {% block body %}
+    {% endblock %}
+    <footer class="inner-main-footer">
+        <div class="inner-main-footer-box d-flex">
+            <ul>
+                <li><a>Courses</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact Us</a></li>
+                <li><a>Deploy course</a></li>
+            </ul>
+            <ul>
+                <li><a>Help and Feedback</a></li>
+                <li><a>Blog</a></li>
+                <li><a>Careers</a></li>
+            </ul>
+            <ul>
+                <li><a>Terms</a></li>
+                <li><a>Privacy and Policy</a></li>
+                <li><a>Cookies setting</a></li>
+            </ul>
+        </div>
+    </footer>
+    </div>
+    <script>
+         window.addEventListener('DOMContentLoaded', function() {
+            const body = document.querySelector('body');
+            const content = document.querySelector('.content');
+            body.style.height = `${content.scrollHeight}px`;    
+        })
+    </script>
+    
+    
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
+
