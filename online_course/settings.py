@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'online_course.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'crimniyv',            # Database name (Same as User & Default database)
-        'USER': 'crimniyv',            # User (Same as User & Default database)
-        'PASSWORD': 'hYbsMiiElA-775h9qXrpkZ_9cDV-GKDO',   # Replace 'your_password' with the actual password
-        'HOST': 'john.db.elephantsql.com',   # Host
-        'PORT': '',                   # Leave empty to use the default port (usually 5432)
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'learn_x',               # Database name (Same as User & Default database)
+        'USER': 'shubham3246',           # User (Same as User & Default database)
+        'PASSWORD': 'Ly#.j.b8tw_dPCM',   # Replace 'your_password' with the actual password
+        'HOST': 'db4free.net',           # Host
+        'PORT': '3306',                  # Leave empty to use the default port (usually 5432)
     }
 }
 
@@ -124,8 +124,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 import os
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'App/static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'App/static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

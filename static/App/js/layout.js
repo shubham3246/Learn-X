@@ -24,6 +24,7 @@ window.document.addEventListener("DOMContentLoaded", ()=>{
 
 function open_payment_box(){
     document.querySelector(".payment-box").style.display = "block";
+    initialize();
 }
 function close_payment_box(){
     document.querySelector(".payment-box").style.display = "none";

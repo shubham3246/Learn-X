@@ -1,4 +1,5 @@
-window.onload = function(argument) {
+document.addEventListener("DOMContentLoaded", ()=>{
+	console.log("index");
 	// var lyric = "i couldn't take it couldn't stand another minute couldn't bear another day without you in it";
 	var lyric = "Python C++ C JAVA JavaScript HTML5 CSS3 MySQL Tailwind Bootstrap Angular Node Vue Flutter";
 	var words = {};
@@ -88,6 +89,5 @@ window.onload = function(argument) {
 	}
 
 	
-
-}
+});
 

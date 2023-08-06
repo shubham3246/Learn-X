@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    subscription = document.querySelector(".course-inner-card-body-subscription a");
-    if(subscription){
-    subscription.addEventListener('click', subscribe);
-    }
-
-
     let isSubscriber = document.querySelector(".is_sub");
     if(isSubscriber) {
         document.querySelector(".course-inner-lectures").style.display = "block";
@@ -134,10 +128,13 @@ function colorIt() {
 }
 
 function subscribe(){
+    console.log("sub");
     is_pro = document.querySelector(".pro-card");
-
+    console.log(is_pro);
+    
     if(is_pro) {
-        console.log("premium required");        
+        console.log("premium required");  
+        open_payment_box();      
     }
     else {
         slug = document.querySelector(".course-inner-card-slug").innerText;
@@ -181,7 +178,7 @@ function subscribe(){
             
             setTimeout(function(){
                 document.querySelector(".course-inner-lectures").style.display = "block";    
-            }, 2000);
+            }, 700);
         });
     }
 }

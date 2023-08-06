@@ -1,4 +1,5 @@
 {% extends "App/layout.html" %}
+{% load static %}
 
 {% block pro %}
     {% if is_pro == True %}
@@ -45,4 +46,6 @@
             {% endfor %}
         </div>
     </div>
-{% endblock %}
+
+    <script src="{% static 'App/js/courses.js' %}"></script>
+    {% endblock %}

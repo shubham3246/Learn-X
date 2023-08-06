@@ -1,4 +1,5 @@
 {% extends 'App/layout.html' %}
+{% load static %}
 
 {% block pro %}
     {% if is_pro == True %}
@@ -31,7 +32,7 @@
             </div>
         </div>
         <div class="course-inner-card-body">
-            {% if is_free == false and is_sub == false %} 
+            {% if course.is_free == False and is_sub == False %} 
             <div class="pro-card h-5 w-5" style="color: goldenrod;"></div>
             {% endif %}
             <div class="course-inner-card-body-para d-flex gap-5">
@@ -45,9 +46,9 @@
             <!-- <form ></form> -->
             <div class="course-inner-card-body-subscription">
                 {% if is_sub %}
-                <div style="color: #03e9f4;">Subscribed to the current course.</div>
+                    <div style="color: #03e9f4;">Subscribed to the current course.</div>
                 {% else %}
-                <a>Subscribe to the course</a>
+                    <a onclick="subscribe()">Subscribe to the course</a>
                 {% endif %}
             </div>
         </div>
@@ -80,4 +81,6 @@
     const maxLike = parseInt(document.querySelector(".rating").innerText.slice(8))+1;
     const minLike = parseInt(document.querySelector(".rating").innerText.slice(8))-1;
 </script>
+
+
 {% endblock %}
