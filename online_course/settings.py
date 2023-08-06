@@ -74,12 +74,17 @@ WSGI_APPLICATION = 'online_course.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'crimniyv',            # Database name (Same as User & Default database)
+        'USER': 'crimniyv',            # User (Same as User & Default database)
+        'PASSWORD': 'hYbsMiiElA-775h9qXrpkZ_9cDV-GKDO',   # Replace 'your_password' with the actual password
+        'HOST': 'john.db.elephantsql.com',   # Host
+        'PORT': '',                   # Leave empty to use the default port (usually 5432)
+    }
+}
+
 
 
 # Password validation
