@@ -84,12 +84,17 @@ a:hover {
 .inner-main-footer{
     position: relative;
     color: #03e9f4;
+    flex-direction: column;
     box-sizing: border-box;
     box-shadow: 1px 0px 50px 3px #03e9f4;
-    padding: 83px 100px 95px 100px;
+    padding: 83px 100px 65px 100px;
 }
 .inner-main-footer-box{
-    justify-content: space-around;
+    justify-content: space-between;
+    
+}
+.inner-main-footer-box ul{
+    margin: 0 100px;
 }
 .inner-main-footer-box li{
     margin: 10px;
