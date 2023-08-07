@@ -35,7 +35,7 @@
                                         <img src="{{context.first.imageUrl}}" class="card-img-top" alt="..." style="max-height: 150px; object-fit: cover;">
                                         <div class="card-body">
                                             <h5 class="card-title">{{context.first.title | truncatechars:20}}</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <p class="card-text">{{context.first.description | truncatechars:50}}</p>
                                             <a href="#" class="btn btn-primary">Go somewhere</a>
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@
                                             <span class="position-absolute translate-middle badge rounded-pill">Premium</span>
                                             {% endif %}
                                             <h5 class="card-title">{{course.title | truncatechars:20}}</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <p class="card-text">{{course.description | truncatechars:50}}</p>
                                             <a href="{% url 'course' course.slug %}" class="btn btn-primary">View Course</a>
                                         </div>
                                     </div>                                   
