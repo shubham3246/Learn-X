@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'online_course.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'learn_x',               # Database name (Same as User & Default database)
-        'USER': 'shubham3246',           # User (Same as User & Default database)
-        'PASSWORD': 'Ly#.j.b8tw_dPCM',   # Replace 'your_password' with the actual password
-        'HOST': 'db4free.net',           # Host
-        'PORT': '3306',                  # Leave empty to use the default port (usually 5432)
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'learn-x',               # Database name (Same as User & Default database)
+        'USER': 'cool2015raj',           # User (Same as User & Default database)
+        'PASSWORD': 'bgXEPBrK0N2A',   # Replace 'your_password' with the actual password
+        'HOST': 'ep-orange-paper-65428133.us-east-2.aws.neon.tech',           # Host
+        'PORT': '5432',                  # Leave empty to use the default port (usually 5432)
     }
 }
 
