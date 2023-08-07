@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'online_course.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'learn-x',               # Database name (Same as User & Default database)
         'USER': 'cool2015raj',           # User (Same as User & Default database)
         'PASSWORD': 'bgXEPBrK0N2A',   # Replace 'your_password' with the actual password
